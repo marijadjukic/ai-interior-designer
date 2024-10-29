@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AIInteriorDesignerWebApp.props" />
+</Project>

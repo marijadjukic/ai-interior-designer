@@ -1,0 +1,56 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+<body>
+<div class="jumbotron">
+    <h1>AI Interior Designer 💜</h1>
+    <p class="lead">Design your home with state-of-art AI powered app.</p>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        <label asp-for="Current.Id">
+            Session Id #@Model.Current.Id
+            <input type="hidden" asp-for="Current.Id" />
+        </label>
+        <br />
+        <br />
+
+        <label asp-for="Current.RoomType">
+        </label>
+        <select asp-for="Current.RoomType" asp-items="Model.RoomTypes">
+        </select>
+        <br />
+        <br />
+
+        <label asp-for="Current.Style">
+        </label>
+        <select asp-for="Current.Style" asp-items="Model.DesingStyles">
+        </select>
+        <br/>
+        <br />
+
+            <label asp-for="Current.ImageBytes">
+            <input type="file" asp-for="ImageFile" />
+        </label>
+        <br />
+        <br />
+
+        <button type="submit">Design it!</button>
+    </form>
+</div>
+
+<div>
+        @{
+            if (Model.Current.ImageBytes != null)
+            {
+                <br />
+                <br />
+                <h2>Your new @Model.Current.RoomType </h2>
+                <img src="data:image;base64,@System.Convert.ToBase64String(Model.Current.ImageBytes)" />
+            }
+        }
+</div>
+
+</body>
