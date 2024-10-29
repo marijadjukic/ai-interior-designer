@@ -15,7 +15,7 @@
         }
     },
     "variables": {
-        "openAIName": "[format('{0}-openai', parameters('name'))]",
+        "openAIName": "[format('{0}-{1}-openai', parameters('name'), uniqueString(resourceGroup().name))]",
         "openAIAPIVersion": "2024-06-01-preview"
     },
     "resources": [

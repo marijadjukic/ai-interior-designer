@@ -1,4 +1,7 @@
 .vs/
 **/obj/
 **/bin/
-**/*.csproj.user
+**/*.csproj.*
+**/Properties/ServiceDependencies/*
+**/Properties/PublishProfiles/*
+!**/Properties/PublishProfiles/*Template.pubxml
